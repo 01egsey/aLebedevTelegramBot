@@ -7,21 +7,21 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Client {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @Column(nullable=false)
-    private Long externalId;
+	@Column(nullable = false)
+	private Long externalId;
 
-    @Column(nullable=false, length=225)
-    private String fullName;
+	@Column(nullable = false, length = 225)
+	private String fullName;
 
-    @Column(nullable=false, length=15)
-    private String phoneNumber;
+	@Column(nullable = false, length = 15)
+	private String phoneNumber;
 
-    @Column(nullable=false, length=400)
-    private String address;
+	@Column(nullable = false, length = 400)
+	private String address;
 
 	public Long getId() {
 		return this.id;
@@ -31,7 +31,6 @@ public class Client {
 		this.id = id;
 	}
 
-
 	public Long getExternalId() {
 		return this.externalId;
 	}
@@ -39,7 +38,6 @@ public class Client {
 	public void setExternalId(Long externalId) {
 		this.externalId = externalId;
 	}
-
 
 	public String getFullName() {
 		return this.fullName;

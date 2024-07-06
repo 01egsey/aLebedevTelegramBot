@@ -8,18 +8,18 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class OrderProduct {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @ManyToOne
-    private ClientOrder clientOrder;
+	@ManyToOne
+	private ClientOrder clientOrder;
 
-    @ManyToOne
-    private Product product;
+	@ManyToOne(optional = false)
+	private Product product;
 
-    @Column(nullable=false)
-    private Integer countProduct;
+	@Column(nullable = false)
+	private Integer countProduct;
 
 	public Long getId() {
 		return this.id;

@@ -8,19 +8,16 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Category {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @Column(nullable=false, length=50,unique=true)
-    private String name;
+	@Column(nullable = false, length = 50, unique = true)
+	private String name;
 
-    @ManyToOne
-    private Category parent;
+	@ManyToOne
+	private Category parent;
 
-
-
-	
 	public Long getId() {
 		return this.id;
 	}
@@ -44,6 +41,5 @@ public class Category {
 	public void setParent(Category parent) {
 		this.parent = parent;
 	}
-
 
 }

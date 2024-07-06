@@ -8,21 +8,21 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Product {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @ManyToOne
-    private Category category;
+	@ManyToOne(optional = false)
+	private Category category;
 
-    @Column(nullable=false, length=50,unique=true)
-    private String name;
+	@Column(nullable = false, length = 50, unique = true)
+	private String name;
 
-    @Column(nullable=false, length=17, precision=2)
-    private Double price;
+	@Column(nullable = false, length = 17, precision = 2)
+	private Double price;
 
-    @Column(nullable=false, length=400)
-    private String description;
+	@Column(nullable = false, length = 400)
+	private String description;
 
 	public String getDescription() {
 		return this.description;

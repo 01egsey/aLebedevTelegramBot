@@ -8,18 +8,18 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class ClientOrder {
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @ManyToOne
-    private Client client;
+	@ManyToOne
+	private Client client;
 
-    @Column(nullable=false)
-    private Integer status;
+	@Column(nullable = false)
+	private Integer status;
 
-    @Column(nullable=false, length=17, precision=2)
-    private Double total;
+	@Column(nullable = false, length = 17, precision = 2)
+	private Double total;
 
 	public Long getId() {
 		return this.id;
@@ -52,5 +52,5 @@ public class ClientOrder {
 	public void setTotal(Double total) {
 		this.total = total;
 	}
-    
+
 }
