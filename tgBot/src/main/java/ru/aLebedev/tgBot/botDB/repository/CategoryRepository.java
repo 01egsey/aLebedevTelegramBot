@@ -9,4 +9,6 @@ import ru.aLebedev.tgBot.botDB.entity.Category;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 
+    Category findCategoryById(Long id);
+
 }
