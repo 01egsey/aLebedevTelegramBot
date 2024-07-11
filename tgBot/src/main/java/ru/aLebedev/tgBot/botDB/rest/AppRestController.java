@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ru.aLebedev.tgBot.botDB.entity.Category;
 import ru.aLebedev.tgBot.botDB.entity.Client;
 import ru.aLebedev.tgBot.botDB.entity.ClientOrder;
 import ru.aLebedev.tgBot.botDB.entity.Product;
@@ -19,6 +20,16 @@ public class AppRestController {
 
     public AppRestController(EntitiesServiceImpl appService) {
         this.appService = appService;
+    }
+
+    @GetMapping("/rest/clients/categories/root")
+    List<Category> findRootCategories() {
+        return appService.findRootCategories();
+    }
+
+    @GetMapping("/rest/clients/category/{id}/categories")
+    List<Category> findCategoriesByParentId(@PathVariable Long id) {
+        return appService.findCategoriesByParentId(id);
     }
 
     @GetMapping("/rest/clients")

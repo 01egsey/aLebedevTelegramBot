@@ -9,4 +9,6 @@ import ru.aLebedev.tgBot.botDB.entity.Client;
 
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
+    Client findByExternalId(Long externalId);
+
 }

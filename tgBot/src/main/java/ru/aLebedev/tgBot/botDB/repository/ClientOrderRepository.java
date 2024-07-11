@@ -13,4 +13,5 @@ public interface ClientOrderRepository extends JpaRepository<ClientOrder, Long> 
 
     List<ClientOrder> findClientOrdersByClientId(Long id);
 
+    ClientOrder findClientOrderByClient_Id(Long id);
 }

@@ -14,8 +14,8 @@ import ru.aLebedev.tgBot.botDB.entity.Product;
 
 public interface OrderProductRepository extends JpaRepository<OrderProduct, Long> {
 
-    @Query("select distinct op.product from OrderProduct op where op.clientOrder.client.id = :id")
-    // Вывести без повторов все продукты из продуктовых заказов, где idклиента в
+    @Query("select op.product from OrderProduct op where op.clientOrder.client.id = :id")
+    // Вывести все продукты из продуктовых заказов, где idклиента в
     // клиенте в заказе клиента в заказе равно нужному нам id клиента
     List<Product> findProductsByClientId(Long id);
 
