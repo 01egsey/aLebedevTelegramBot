@@ -37,6 +37,31 @@ public class EntitiesServiceImpl implements EntitiesService {
     }
 
     @Override
+    public ClientOrder findClientOrderByClient_Id(Long id) {
+        return clientOrderRepository.findClientOrderByClient_Id(id);
+    }
+
+    @Override
+    public Product findProductById(Long id) {
+        return productRepository.findProductById(id);
+    }
+
+    @Override
+    public Client createClient(Client client) {
+        return clientRepository.save(client);
+    }
+
+    @Override
+    public List<Category> findRootCategories() {
+        return categoryRepository.findRootCategories();
+    }
+
+    @Override
+    public List<Category> findCategoriesByParentId(Long id) {
+        return categoryRepository.findByParent_Id(id);
+    }
+
+    @Override
     public List<Product> getProductsByCategoryId(Long id) {
         Category category = categoryRepository.findCategoryById(id);
         return productRepository.findByCategory(category);

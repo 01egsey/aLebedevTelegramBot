@@ -39,21 +39,25 @@ public class FillingTests {
 
         // Классические категори
         Category pizza = new Category();
+        // pizza.setId(1001L);
         pizza.setName("Пицца");
         pizza.setParent(null);
         categoryRepository.save(pizza);
 
         Category rolls = new Category();
+        // rolls.setId(1002L);
         rolls.setName("Роллы");
         rolls.setParent(null);
         categoryRepository.save(rolls);
 
         Category burger = new Category();
+        // burger.setId(1003L);
         burger.setName("Бургеры");
         burger.setParent(null);
         categoryRepository.save(burger);
 
         Category drink = new Category();
+        // drink.setId(1004L);
         drink.setName("Напитки");
         drink.setParent(null);
         categoryRepository.save(drink);

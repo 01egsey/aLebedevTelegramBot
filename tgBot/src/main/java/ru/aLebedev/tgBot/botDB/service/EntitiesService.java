@@ -2,6 +2,7 @@ package ru.aLebedev.tgBot.botDB.service;
 
 import java.util.List;
 
+import ru.aLebedev.tgBot.botDB.entity.Category;
 import ru.aLebedev.tgBot.botDB.entity.Client;
 import ru.aLebedev.tgBot.botDB.entity.ClientOrder;
 import ru.aLebedev.tgBot.botDB.entity.Product;
@@ -10,6 +11,42 @@ import ru.aLebedev.tgBot.botDB.entity.Product;
  * Сервис для работы с сущностями телеграмм-бота
  */
 public interface EntitiesService {
+
+    /**
+     * Получить список подкатегорий для конкретной категории по id
+     * 
+     * @param id идентификатор категории
+     */
+    ClientOrder findClientOrderByClient_Id(Long id);
+
+    /**
+     * Найти продукт по его id
+     * 
+     * 
+     */
+    Product findProductById(Long id);
+
+    /**
+     * Создание новой записи о клиенте
+     * 
+     * 
+     */
+    Client createClient(Client client);
+
+    /**
+     * Получить список корневых категорий
+     * 
+     * 
+     */
+    List<Category> findRootCategories();
+
+    /**
+     * Получить список подкатегорий для конкретной категории по id
+     * 
+     * @param id идентификатор категории
+     */
+    List<Category> findCategoriesByParentId(Long id);
+
     /**
      * Получить список товаров в категории
      * 
